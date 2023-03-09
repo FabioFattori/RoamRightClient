@@ -5,6 +5,12 @@
 }
 
 body {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
   background-color: var(--backgroundColor);
 
   margin: 0;
@@ -62,6 +68,7 @@ code {
   width: 100%;
   border-radius: 25px;
   border-style: none;
+  
   color: var(--white);
   font-style: italic;
   border-color: transparent;
@@ -123,19 +130,138 @@ code {
   color: var(--white) !important;
 }
 
-.BtnAddViaggio{
+.BtnAddViaggio {
   background-color: var(--DarkBlue);
   border-radius: 25px;
   border-color: transparent;
-   padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 40%;
+  padding-right: 40%;
   padding-top: 50px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
+
+  margin-bottom: 40px;
 
   cursor: pointer;
 }
 
+.BtnAddContainer {
+  display: flex;
 
-.AddIcon{
+  justify-content: center;
+}
+
+.AddIcon {
   font-size: 50px !important;
+  color: var(--white);
+}
+
+.ViaggiContainer {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.SingleTrip {
+  background-color: var(--DarkBlue);
+  color: var(--white);
+  border-radius: 25px;
+  border-color: transparent;
+
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.DateContainer {
+  display: flex;
+
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+}
+
+.Icona {
+  margin-right: 10px;
+  font-size: 35px !important;
+}
+
+.Paragrafo {
+  font-size: x-large;
+  display: flex;
+}
+
+/* Inspect Viaggio */
+
+h1{
+  color: var(--white);
+}
+
+.TitleOfTrip {
+  color: var(--white);
+  display: flex;
+  padding-left: 10%;
+}
+
+.ContainerTappe {
+  background-color: var(--DarkBlue);
+  color: var(--white);
+  border-radius: 25px;
+  border-color: transparent;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.BtnAddTappa {
+  background-color: var(--backgroundColor);
+
+  padding-top: 5px;
+
+  padding-bottom: 5px;
+
+  border-color: transparent;
+
+  border-radius: 25px;
+  padding-left: 20%;
+
+  padding-right: 20%;
+  cursor: pointer;
+}
+
+.TappeContainer{
+  display: flex;
+  margin-left: 10%;
+  
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.SingleTappa{
+  display: flex;
+}
+
+.Accordion{
+  color: var(--white) !important;
+  box-shadow: none !important;
+  position: initial !important;
+  background-color: var(--DarkBlue) !important;
+  border-color: transparent !important;
+}
+
+.SingleInput{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.CreaTappa{
+  margin-top: 0px !important;
 }

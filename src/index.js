@@ -9,12 +9,21 @@ import {
 import Login from './Pages/Login';
 import Reg from './Pages/Reg';
 import Home from './Pages/Home';
-
+import CreaViaggio from './Pages/CreaViaggio';
+import InspectViaggio from './Pages/InspectViaggio';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/Viaggio",
+    element: <InspectViaggio />
+  },
+  {
+    path: "/CreaViaggio",
+    element: <CreaViaggio />
   },
   {
     path: "/Login",
