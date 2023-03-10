@@ -86,7 +86,10 @@ function Home() {
               <Button>
                 Il mio Profilo <PersonIcon />
               </Button>
-              <Button>
+              <Button onClick={() => {
+                localStorage.setItem("ID",null);
+                navigate("/Login");
+              }}>
                 Logout
                 <LogoutIcon />
               </Button>
@@ -101,29 +104,29 @@ function Home() {
       <div className="ViaggiContainer">
         {Viaggi
           ? Viaggi.map((element) => {
-              return (
-                <div
-                  className="SingleTrip"
-                  key={element.ID}
-                  onClick={() => {
-                    localStorage.setItem("Trip", JSON.stringify(element));
-                    navigate("/Viaggio");
-                  }}
-                >
-                  <h1>{element.Nome}</h1>
-                  <div className="DateContainer">
-                    <p className="Paragrafo">
-                      <FlightTakeoffIcon className="Icona" />
-                      {element.DataInizio}
-                    </p>
-                    <p className="Paragrafo">
-                      <FlightLandIcon className="Icona" />
-                      {element.DataFine}
-                    </p>
-                  </div>
+            return (
+              <div
+                className="SingleTrip"
+                key={element.ID}
+                onClick={() => {
+                  localStorage.setItem("Trip", JSON.stringify(element));
+                  navigate("/Viaggio");
+                }}
+              >
+                <h1>{element.Nome}</h1>
+                <div className="DateContainer">
+                  <p className="Paragrafo">
+                    <FlightTakeoffIcon className="Icona" />
+                    {element.DataInizio}
+                  </p>
+                  <p className="Paragrafo">
+                    <FlightLandIcon className="Icona" />
+                    {element.DataFine}
+                  </p>
                 </div>
-              );
-            })
+              </div>
+            );
+          })
           : null}
         <div className="BtnAddContainer">
           <button

@@ -68,7 +68,7 @@ code {
   width: 100%;
   border-radius: 25px;
   border-style: none;
-  
+
   color: var(--white);
   font-style: italic;
   border-color: transparent;
@@ -174,7 +174,13 @@ code {
 
 
 ::-webkit-scrollbar {
-  display: none;
+  background-color: var(--backgroundColor);
+}
+
+
+::-webkit-scrollbar-thumb{
+  border-radius: 25px;
+  background-color: var(--DarkBlue);
 }
 
 .DateContainer {
@@ -197,7 +203,7 @@ code {
 
 /* Inspect Viaggio */
 
-h1{
+h1 {
   color: var(--white);
 }
 
@@ -236,19 +242,19 @@ h1{
   cursor: pointer;
 }
 
-.TappeContainer{
+.TappeContainer {
   display: flex;
   margin-left: 10%;
-  
+
   flex-direction: column;
   align-items: flex-start;
 }
 
-.SingleTappa{
+.SingleTappa {
   display: flex;
 }
 
-.Accordion{
+.Accordion {
   color: var(--white) !important;
   box-shadow: none !important;
   position: initial !important;
@@ -256,12 +262,22 @@ h1{
   border-color: transparent !important;
 }
 
-.SingleInput{
+.RegLogInput{
+  width: 100%;
+}
+
+.SingleInput {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.CreaTappa{
+.CreaTappa {
   margin-top: 0px !important;
+}
+
+.headerTrip {
+  display: flex;
+
+  justify-content: space-around;
 }

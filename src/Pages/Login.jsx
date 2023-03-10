@@ -11,11 +11,8 @@ function Login() {
 
   const navigate = useNavigate()
 
-  const [Email, setEmail] = useState("Email...");
-  const [Pass, setPass] = useState("Password...");
-  const [EmailInput, setEInput] = useState(true);
-
-  const [PassInput, setPInput] = useState(true);
+  const [Email, setEmail] = useState("");
+  const [Pass, setPass] = useState("");
 
 
   function checkInput() {
@@ -41,19 +38,24 @@ function Login() {
     <div className='inputContainer'>
       <h4 className='Title'>Ci conosciamo già?</h4>
       <div className='inputPlusBtnContainer'>
-        <input className='InputText' onClick={() => {
-          if (EmailInput) {
-            setEInput(false)
-            setEmail("")
-          }
-        }} value={Email} onChange={(e) => setEmail(e.target.value)} type="email" />
-        <input className='InputText' onClick={(e) => {
-          if (PassInput) {
-            setPInput(false);
-            setPass("")
-            e.target.type = "password"
-          }
-        }} value={Pass} onChange={(e) => setPass(e.target.value)} type="text" />
+        <div className="SingleInput RegLogInput">
+          <label className="Title">Email:</label>
+          <input
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="InputText"
+            type="text"
+          />
+        </div>
+        <div className="SingleInput RegLogInput">
+          <label className="Title">Password:</label>
+          <input
+            value={Pass}
+            onChange={(e) => setPass(e.target.value)}
+            className="InputText"
+            type="password"
+          />
+        </div>
         <button className='BtnInput' onClick={() => InviaRichiesta()}>Invia</button>
         <button className='BtnInput' onClick={() => navigate("/Reg")}>Non ci conosciamo</button>
       </div>

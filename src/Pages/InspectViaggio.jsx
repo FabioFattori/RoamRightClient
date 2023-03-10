@@ -4,8 +4,10 @@ import { SingleDayOfTrip } from "../Components/SingleDayOfTrip";
 import { GetSingleDate } from "../functions/GetSingleDate";
 import { url } from "../functions/Url";
 import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 function InspectViaggio() {
+  const nav = useNavigate();
   const [Viaggio, setViaggio] = useState(null);
   const [numberOfDays, setDays] = useState(0);
   const [ArrOfDays, setArr] = useState([]);
@@ -47,7 +49,7 @@ function InspectViaggio() {
   return Viaggio ? (
     <div>
       <div className="headerTrip">
-        <HomeIcon />
+        <h1 style={{ cursor: "pointer" }} onClick={() => nav("/")} ><HomeIcon style={{ fontSize: "50px" }} /></h1>
         <h1>{Viaggio.Nome}</h1>
       </div>
       <div>
