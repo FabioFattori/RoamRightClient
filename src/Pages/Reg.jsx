@@ -22,9 +22,11 @@ function Reg() {
 
   function InviaRichiesta() {
     if (checkInput()) {
-      axios.get(url + "CreaUtente.php?P=" + Pass + "&E=" + Email).then(function (response) {
-        localStorage.setItem("ID", response.data.ID + "|" + response.data.Email.split('@')[0])
-        navigate("/");
+      axios.put(url + "CreaUtente.php?P=" + Pass + "&E=" + Email).then(function () {
+        axios.get(url + "SearchForUtente.php?P=" + Pass + "&E=" + Email).then(function (response) {
+          localStorage.setItem("ID", response.data.ID + "|" + response.data.Email.split('@')[0])
+          navigate("/");
+        })
       });
     }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { url } from '../functions/Url';
 import { Calendar } from "react-multi-date-picker"
+import { useNavigate } from 'react-router-dom';
 
 
 function CreaViaggio() {
@@ -10,6 +11,7 @@ function CreaViaggio() {
     const [Input, setInput] = useState(true);
     const [dataInizio, setInizio] = useState(null)
     const [dataFine, setFine] = useState(null)
+    const navigate = useNavigate();
 
     useEffect(() => {
         setID(localStorage.getItem("ID").split('|')[0]);
@@ -18,9 +20,9 @@ function CreaViaggio() {
 
 
     function CreateTrip() {
-        if(id!==null&&nomeTrip!==null&&nomeTrip!=="nome.."&&dataInizio!==null&&dataFine!==null){
-            axios.post(url + "CreaViaggio.php?ID=" + id + "&N="+nomeTrip+"&I="+dataInizio+"&F="+dataFine).then(function (response) {
-                console.log(response.data)
+        if (id !== null && nomeTrip !== null && nomeTrip !== "nome.." && dataInizio !== null && dataFine !== null) {
+            axios.post(url + "CreaViaggio.php?ID=" + id + "&N=" + nomeTrip + "&I=" + dataInizio + "&F=" + dataFine).then(function (response) {
+                navigate("/")
             });
         }
     }
