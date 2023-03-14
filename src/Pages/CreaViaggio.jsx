@@ -7,8 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function CreaViaggio() {
     const [id, setID] = useState(null);
-    const [nomeTrip, setNome] = useState("nome..");
-    const [Input, setInput] = useState(true);
+    const [nomeTrip, setNome] = useState("");
     const [dataInizio, setInizio] = useState(null)
     const [dataFine, setFine] = useState(null)
     const navigate = useNavigate();
@@ -61,17 +60,26 @@ function CreaViaggio() {
         <div className='inputContainer'>
             <h4 className='Title'>Crea il Tuo Prossimo Viaggio!</h4>
             <div className='inputPlusBtnContainer'>
-                <input className='InputText' value={nomeTrip} onClick={() => {
-                    if (Input) {
-                        setInput(false);
-                        setNome("")
-                    }
-                }} onChange={(e) => setNome(e.target.value)} type="text" />
+                <div className="SingleInput RegLogInput">
+                    <label className="Title">Email:</label>
+                    <input
+                        value={nomeTrip}
+                        onChange={(e) => setNome(e.target.value)}
+                        className="InputText"
+                        type="text"
+                    />
+                </div>
 
-                <label>{dataInizio} - {dataFine}</label>
+                <div className='SingleInput RegLogInput'>
 
-                <Calendar range onChange={(e) => getDataFromPicker(e)} />
+                    <label className="Title">Durata del viaggio:</label>
+                    <label className='displayDate'>{dataInizio} - {dataFine}</label>
 
+                    <div className='calendar'>
+                        <Calendar range onChange={(e) => getDataFromPicker(e)} />
+                    </div>
+
+                </div>
                 <button className='BtnInput' onClick={() => CreateTrip()}>Crea</button>
             </div>
         </div>

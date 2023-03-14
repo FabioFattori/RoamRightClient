@@ -83,11 +83,8 @@ function Home() {
               aria-label="vertical contained button group"
               variant="text"
             >
-              <Button>
-                Il mio Profilo <PersonIcon />
-              </Button>
               <Button onClick={() => {
-                localStorage.setItem("ID",null);
+                localStorage.setItem("ID", null);
                 navigate("/Login");
               }}>
                 Logout
@@ -114,6 +111,7 @@ function Home() {
                 }}
               >
                 <h1>{element.Nome}</h1>
+
                 <div className="DateContainer">
                   <p className="Paragrafo">
                     <FlightTakeoffIcon className="Icona" />
@@ -123,8 +121,11 @@ function Home() {
                     <FlightLandIcon className="Icona" />
                     {element.DataFine}
                   </p>
+
                 </div>
+                
               </div>
+              
             );
           })
           : null}

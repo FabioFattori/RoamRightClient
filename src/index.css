@@ -167,7 +167,7 @@ code {
   border-color: transparent;
 
   margin-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 50px;
   cursor: pointer;
 }
@@ -280,4 +280,29 @@ h1 {
   display: flex;
 
   justify-content: space-around;
+}
+
+.calendar{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+.displayDate{
+  color: var(--DarkBlue);
+}
+
+.TitleContainer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.Row{
+  display: flex;
+  
+  flex-direction: column-reverse;
+}
+
+.prova{
+  display: flex;
 }
